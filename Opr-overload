@@ -1,0 +1,34 @@
+/*
+
+This code shows how to overload the operator <<.
+Written by moNop 4/23
+
+*/
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+
+class Complex{
+  public:
+    double r, i;
+    Complex (double rl=0, double img =0):r(rl), i(img){}
+    
+};
+
+ostream& operator << (ostream & obj1, Complex & obj){
+
+     obj1 << sqrt(pow(obj.r,2) + pow(obj.i,2)) ;
+    return obj1;
+}
+
+
+int main()
+{
+    Complex num(1.56,2.21);
+    cout << "Absolute value of " << num.r << " + i * " << num.i << " is: " << num << endl;
+
+    return 0;
+}
